@@ -1,0 +1,230 @@
+/* Reset...
+
+   ========================================================================== */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+/* Mise en page...
+
+   ========================================================================== */
+
+html {
+	width: 100%;
+	font-size: 87,5%;
+	min-height: 100vh;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	color: #FF5A54;
+	cursor: default;
+	
+	/*Conteneur flex*/
+	display: flex;
+	flex-direction: column;
+	background-color: #002A61;
+}
+
+header{
+	/*Item flex*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	padding: 1rem;
+	/*Décoration*/
+	background-color: #000000;
+}
+
+h1 {
+	font-size: 3rem;
+	margin: 0.5rem 0;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+footer {
+	/*Conteneur flex*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1%;
+}
+
+footer > p {
+	/*Item flex*/
+	flex: 1 1 auto;
+}
+
+footer > div {
+	/*Item flex*/
+	flex: 0 0 auto;
+
+	/*Décoration*/
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+footer > div > i:hover {
+	transform: scale(1.2);
+}
+
+section {
+	width:100vw;
+	/*Étirement comme item flex*/
+	flex: 1 1 auto;
+	/*Conteneur flex en colonne*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	/*Décoration*/
+	margin: 1em;
+	background-color: #002A61;
+	;
+	color: #ffffff;
+}
+
+section #titreQuestion {
+	color: #FF5A54;
+	font-size: 1.5rem;
+	width: 90%;
+}
+
+section #lesChoix {
+	/*Étirement comme item flex*/
+	/*flex: 1 1 auto;*/
+	
+	/*Conteneur flex en colonne*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1em;
+}
+
+#lesChoix .choix {
+	width: 50vw;
+	padding: 1.5rem;
+	cursor: pointer;
+	transition: color 0.5s, background-color 0.5s;
+}
+
+div.choix:hover,
+div.choix:active {
+	color: rgb(173, 59, 59);
+	background-color: #000000;
+}
+
+.fenetre {
+	/*Décoration*/
+	padding: 2%;
+	background-color: #FF5A54;
+	color:#002A61;
+	font-size: 1.6rem;
+	
+	border: 0.5rem solid #002A61;
+	border-radius: 1.5rem;
+
+	/*Conteneur flex en colonne*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	/*Position*/
+	position: absolute;
+	
+}
+
+.fenetre > div:nth-child(1) {
+	/*Dimensions et image*/
+	margin:0.5rem;
+	width: 5rem;
+	height: 5rem;
+	font-size: 5rem;
+	line-height: 5rem;
+	
+	cursor: pointer;
+
+	/*Alignement à droite*/
+	align-self: flex-end;	
+	transition: transform 0.3s;
+}
+
+.fenetre > div:nth-child(1):hover {
+	transform: scale(1.2);
+}
+
+.fenetre > div:nth-child(2) {
+	/*Décoration*/
+	font-size: 3rem;
+}
+
+
+/* Styles pour les écrans plus larges...
+
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+	/*On augmente la taille du texte*/
+	html {
+		font-size: 100%;
+	}
+
+	body {
+		/*Conteneur flex*/
+		display: flex;
+		flex-direction: row;
+		background-color: #002A61;
+	}
+
+	header{
+		width: 40vw;
+	}
+	
+	h1 {
+		font-size: 4rem;
+		margin: 0.5rem 0;
+	}
+	
+	p {
+		font-size: 1.2rem;
+	}
+
+	section {
+		width:50vw;
+	}
+
+	section #titreQuestion {
+		font-size: 2rem;
+	}
+	
+	section #lesChoix {
+		font-size: 1.5em;
+		/*Conteneur flex en rangée*/
+		flex-direction: col;
+	}
+
+	div.choix {
+		padding:3px;
+	}
+
+
+	footer {
+		width:25vw;
+	}
+}
